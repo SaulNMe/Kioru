@@ -20,7 +20,7 @@ a {
 body {
 	font-family: 'Fira Sans';
 	background-color: var(--space-blue);
-	color: #FDFFFC;
+	color: var(--marble-white);
 }
 
 nav {
