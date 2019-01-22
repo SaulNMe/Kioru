@@ -129,16 +129,19 @@ nav .sidenav-trigger {
 	height: 700px;
 }
 #about-us {
-	background-color: #FDFFFC;
+	background-color: var(--marble-white);
+}
+#blog {
+	background-color: var(--marble-white);
 }
 #blog-new {
-	background-color: #FDFFFC;
+	background-color: var(--marble-white);
 }
 #career {
-	background-color: #FDFFFC;
+	background-color: var(--marble-white);
 }
 #career-card {
-	background-color: #FDFFFC;
+	background-color: var(--marble-white);
 }
 #footer{
 	background-color: #0E1B34;
@@ -152,6 +155,7 @@ nav .sidenav-trigger {
 	border-radius: 23px;
 	height: 150px;
 	padding: 14px 16px;
+	font-size: 16px;
 }
 #describe:focus {
 	border:1px solid var(--grayer-out);
@@ -269,7 +273,7 @@ nav .sidenav-trigger {
 }
 
 .extra-horizontal-padding {
-	padding: 0px 130px;
+	padding: 0px 130px !important;
 }
 .great-horizontal-padding {
 	padding: 0px 120px !important;
@@ -316,7 +320,7 @@ nav .sidenav-trigger {
 .big-vertical-margin {
 	margin: 32px 0px;
 }
-.top-big-vertical-margin{
+.top-big-vertical-margin {
 	margin-top: 32px;
 }
 .bottom-vertical-margin {
@@ -644,15 +648,22 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 	background-color: transparent;
 	border: 1px solid var(--marble-white);
 	border-radius: 14px;
-	padding: 10px 0px;
+	padding: 10px 20px;
 	color: var(--marble-white);
 	cursor: pointer;
 }
 .button-transparent:hover, .button-transparent-blue:hover {
 	border: 1px solid var(--grayer-out);
+	color: var(--grayer-out);
 }
 .button-transparent-blue {
+	font-family: 'Fira Sans';
+	background-color: transparent;
 	border: 1px solid var(--space-blue);
+	border-radius: 14px;
+	padding: 10px 20px;
+	color: var(--space-blue);
+	cursor: pointer;
 }
 .button-transparent:hover a {
 	color: var(--grayer-out);
@@ -663,11 +674,11 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 	top: 47px;
 }
 .bg-team{
-	background-image: url("../images/team1.jpg");
+	/* background-image: url("../images/team1.jpg"); */
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-color: #0E1B34;
-	height: 480px; 
+	height: 400px; 
 	width: 100%;
 	overflow: hidden;
 	position: relative;
@@ -773,23 +784,17 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
+  width: 100%;
+  -webkit-overflow-scrolling: touch !important;
   
 }
 .pick {
 	display: inline-block;
-}
-
-
-.pick {
 	height: 80px;
 }
-
-.scrolling-wrapper {
-  width: 100%;
-  -webkit-overflow-scrolling: touch;
-  &::-webkit-scrollbar {
-    display: none;
-  }
+.pick2 {
+	display: inline-block;
+	height: 500px;
 }
 /*========================================= MEDIA QUERY =========================================*/
 

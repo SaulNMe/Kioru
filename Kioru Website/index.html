@@ -14,8 +14,8 @@
 		<section id="landscape" class="special-width my-valign-wrapper">
 			<div class="tint op-04"></div>
 			<div class="row center top-big-vertical-padding">
-				<div class="col desktop m5 l3 no-margin full-width">
-					<img src="images/logo-kioru-letter.png">
+				<div class="col s8 m5 l3 no-margin">
+					<img src="images/logo-kioru-letter.png" class="full-width">
 				</div>
 			</div>
 			<div class="row center">
@@ -37,14 +37,14 @@
 					<div class="col s12 m5 l3 no-margin">
 						<div class="transparent-button transparent-hover center-align full-width movile-column">
 							<a id="learn-about" href="about-us.html" class="uppercase h4 bold-500">Learn more about us</a>
-							<p class="mobile"><i class="material-icons">keyboard_arrow_down</i></p>
 						</div>
+							<a href="#navbar" class="mobile"><i class="material-icons">keyboard_arrow_down</i></a>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<section id="navbar">
+		<section id="navbar" name="navbar">
 			<nav class="small-horizontal-padding">
 			    <div class="nav-wrapper">
 		      		<a href="#" class="a-nav">
@@ -87,8 +87,8 @@
 			</div>
 			<div class="row">
 		      	<div class="col s12 m4 l4 center-align">
-		        	<p class="h4 bold-600 uppercase small-vertical-margin">Mobile</p>
-		        	<div class="cols 12 center">
+		        	<p class="h4 h24 bold-600 uppercase small-vertical-margin">Mobile</p>
+		        	<div class="cols s12 center">
 			        	<div class="col s6 devices right-align">
 			        		<img src="images/movile.png" alt="">
 			        	</div>
@@ -99,7 +99,7 @@
 		      	</div>
 
 				<div class="col s12 m4 l4 center-align">
-					<p class="h4 bold-600 uppercase small-vertical-margin">Web</p>
+					<p class="h4 h24 bold-600 uppercase small-vertical-margin">Web</p>
 					<div class="col s12 small-horizontal-padding">
 						<div class="col s12 full-width">
 							<img src="images/saeko_imac.png">
@@ -108,7 +108,7 @@
 				</div>
 
 			    <div class="col s12 m4 l4 center-align">
-			        <p class="h4 bold-600 uppercase small-vertical-margin">Consulting</p>
+			        <p class="h4 h24 bold-600 uppercase small-vertical-margin">Consulting</p>
 			        <div class="col s12 mac-book small-horizontal-padding">
 			        	<div class="col s12">
 			        		<img src="images/saeko_imac.png" class="mac">
@@ -141,7 +141,7 @@
 							<p class="condensed h5 h14">App development & design </p>
 							<p class="condensed bold h2 h44">Make sure you succeed in mobile</p>
 							<p class="h5 h14">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</p>
-							<button id="remove-width" class="full-width button-transparent h4 small-vertical-margin" onclick=location.href="contact-us.html"> Contact Us
+							<button id="remove-width" class="full-width button-transparent h4 small-vertical-margin" onclick=location.href="contact-us.html"> Contact U
 								<i class="material-icons right valign-wrapper">keyboard_arrow_right</i>
 							</button>
 						</div>
@@ -186,7 +186,7 @@
 		</section>
 		<section id="experience" class="white space-between column normal-vertical-padding">
 			<p class="h3 space-blue center bold-500 h16">This customers have already tasted mobile success</p>
-			<div class="mobile valign-wrapper">
+			<div class="mobile valign-wrapper top-small-vertical-padding">
 				<div class="col s12 scrolling-wrapper">
 					<div class="full-height pick base-horizontal-padding"><img src="images/jenkins.png" class="costumer"></div>
 					<div class="full-height pick base-horizontal-padding"><img src="images/prepa-udlap.png" class="costumer"></div>
@@ -276,11 +276,8 @@
 						<p class="h3 bold">Let's work together</p>
 					</div>
 					<div class="col s6">
-						<div class="transparent-button border-white center-align full-width">
-							<p class="bold h3">
-								<a href="contact-us.html" class="bold h3">TELL US ABOUT YOUR IDEA</a>
-							</p>
-						</div>
+						<button id="remove-width" class="full-width button-transparent h3 bold small-vertical-margin uppercase" onclick=location.href="contact-us.html"> Tell us about your idea
+							</button>
 					</div>
 				</div>
 			</div>
@@ -347,7 +344,7 @@
 		<script type="text/javascript" src="js/main.js"></script>
 		<script> 
 			$(document).ready(function(){
-				alert(window.innerWidth)
+				
 				/*$(window).scroll(function(){
 					if($(window).scrollTop()>695){
 						$('nav').addClass('sticky-nav')
