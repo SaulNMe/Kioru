@@ -1,9 +1,28 @@
 $(function () {
-	
 	/*Auto start function*/
 	(function( window) {
 		resize();
+		onScroll();
 	})(window);
+	
+	$(window).scroll(function(){
+		onScroll()
+		
+	})
+	function onScroll(){
+		if (document.getElementById("our-company")){
+			var ourCompany = document.getElementById("our-company");
+		}
+		if($(window).scrollTop()>window.innerHeight || document.getElementById("html-about-us") || 
+			document.getElementById("html-career") || document.getElementById("html-career-card") ||
+			document.getElementById("html-career-sent")){
+			if(ourCompany) {ourCompany.style.marginTop = 104 + "px";}
+			$('nav').addClass('sticky-nav');
+		} else {
+			ourCompany.style.marginTop = 40 + "px";
+			$('nav').removeClass('sticky-nav')
+		}
+	}
 
 	/*Function for start resizing function*/
 	$(window).resize(function(){
@@ -31,10 +50,6 @@ $(function () {
 		var removeItems = [];
 		var addItems = [];
 		let aboutUs = document.getElementById("about-us");
-		let misionVision = document.getElementById("mision-vision");
-		let history = document.getElementById("history");
-		let awards = document.getElementById("awards");
-		let imageTeam = document.getElementById("image-team");
 		let removePadding = document.getElementById("remove-padding");
 		let careerCard = document.getElementById("career-card");
 		if(window.innerWidth <= 991){
@@ -57,10 +72,6 @@ $(function () {
 			if(aboutUs){
 				handleClass("about-us", ["extra-horizontal-padding"], false);
 				handleClass("about-us", ["base-horizontal-padding"], true)
-				handleClass("mision-vision", ["great-horizontal-padding"], false);
-				handleClass("history", ["great-horizontal-padding"], false);
-				handleClass("awards", ["great-horizontal-padding"], false);
-				handleClass("image-team", ["big-horizontal-padding"], false)
 			}
 			if(removePadding){
 				handleClass("remove-padding", ["extra-horizontal-padding"], false);
@@ -95,9 +106,6 @@ $(function () {
 			if(aboutUs){
 				aboutUs.classList.remove("big-horizontal-padding");
 				aboutUs.classList.add("extra-horizontal-padding");
-				history.classList.add("great-horizontal-padding");
-				awards.classList.add("great-horizontal-padding");
-				imageTeam.classList.add("big-horizontal-padding");
 			}
 			if(removePadding){
 				removePadding.classList.add("extra-horizontal-padding");

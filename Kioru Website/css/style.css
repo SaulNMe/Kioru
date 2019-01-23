@@ -27,6 +27,11 @@ nav {
 	background-color: var(--coal-black);
 }
 
+@font-face {
+	font-family: "bookerly";
+	src:url("C:/Users/snarvaezm/Documents/Kioru Website/Kioru Website/fonts/Bookerly/Bookerly-Regular.ttf");
+}
+
 /* =================================DEFAULT SETTINGS============================================ */
 
 /* ===============================GENERAL COLOR VARS============================================ */
@@ -56,6 +61,9 @@ nav {
 }
 .sidenav {
 	width: 170px;
+}
+.sidenav a {
+	color: var(--space-blue);
 }
 .sidenav li>a {
     color: var(--marble-white);
@@ -93,6 +101,7 @@ nav .sidenav-trigger {
 	width: 100%;
 }
 #our-company {
+	position: relative;
 	margin-top: 40px;
 	position: relative;
 	width: 100%;
@@ -126,25 +135,37 @@ nav .sidenav-trigger {
 	display: flex;
 }
 #greetings {
+	position: relative;
 	height: 700px;
+	margin-top: 64px;
 }
 #about-us {
+	margin-top: 64px;
+	width: 100%;
+	position: relative;
 	background-color: var(--marble-white);
 }
 #blog {
+	position: relative;
 	background-color: var(--marble-white);
 }
 #blog-new {
+	position: relative;
 	background-color: var(--marble-white);
 }
 #career {
+	margin-top: 64px;
+	position: relative;
 	background-color: var(--marble-white);
 }
 #career-card {
+	margin-top: 64px;
+	position: relative;
 	background-color: var(--marble-white);
 }
 #footer{
-	background-color: #0E1B34;
+	position: relative;
+	background-color: var(--space-blue);
 	margin: 0;
 }
 #describe {
@@ -156,11 +177,13 @@ nav .sidenav-trigger {
 	height: 150px;
 	padding: 14px 16px;
 	font-size: 16px;
+	position: relative;
 }
 #describe:focus {
 	border:1px solid var(--grayer-out);
 }
 #experience {
+	position: relative;
 	overflow: hidden;
 }
 /* =======================================SECTION ID============================================ */
@@ -216,6 +239,15 @@ nav .sidenav-trigger {
 .h6 {
 	font-size: 14px;
 }
+.h32 {
+	font-size: 32px;
+}
+.h48 {
+	font-size: 48px;
+}
+.h100 {
+	font-size: 100px;
+}
 /* ========================================H FONT-SIZE========================================== */
 
 /* ======================================TEXT TRANSFORM========================================= */
@@ -232,8 +264,14 @@ nav .sidenav-trigger {
 .condensed {
 	font-family: "Fira Sans Condensed"
 }
+.bookerly {
+	font-family: "Bookerly"
+}
 .text-left {
 	text-align: left;
+}
+.spacing-04{
+	letter-spacing: 0.04em;
 }
 /* ======================================TEXT TRANSFORM========================================= */
 
@@ -315,13 +353,16 @@ nav .sidenav-trigger {
 	margin: 64px 0px;
 }
 .base-vertical-margin{
-	margin: 64px 0px;
+	margin: 64px 0px !important;
 }
 .big-vertical-margin {
 	margin: 32px 0px;
 }
 .top-big-vertical-margin {
 	margin-top: 32px;
+}
+.top-normal-vertical-margin {
+	margin-top: 24px;
 }
 .bottom-vertical-margin {
 	margin-bottom: 8px;
@@ -472,14 +513,12 @@ nav .sidenav-trigger {
 }
 
 /* ==========================================DISPLAY============================================ */
-.row .col.s3 {
-	margin: 0;
-}
+
 .third{
 	width: 33%;
 }
 .table-border {
-	border-bottom: 0.5px solid var(--grayer-out) 
+	border-bottom: 0.5px solid var(--grayer-out) ;
 	transition: background-color 0.5s;
 }
 .table-border:hover {
@@ -580,8 +619,11 @@ nav .sidenav-trigger {
 	position: relative;
 }
 .transparent-hover:hover {
-	border: 1px solid #FDFFFC;
+	border: 1px solid var(--grayer-out);
 	border-radius: 14px;
+}
+.transparent-hover:hover a {
+	color: var(--grayer-out);
 }
 .border-white{
 	border: 1px solid #FDFFFC;
@@ -669,6 +711,7 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 	color: var(--grayer-out);
 }
 /*=========================================BUTTON TRANSPARENT====================================*/
+
 .team {
 	position: relative;
 	top: 47px;
@@ -692,17 +735,6 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 	color: #fff;
 	width: 50%;
 
-}
-.primary-button {
-	text-align: center;
-	padding: 19px;
-}
-.primary-button:hover {
-	background-color: transparent;
-	border-width: 1px;
-	border-style: solid;
-	border-color: #fff;
-	border-radius: 14px;
 }
 .brand-logo {
 	align-self: center;
@@ -776,10 +808,16 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 .sticky-nav{
 	position: fixed;
 	top: 0;
+	z-index: 2;
 }
 .drop-cap{
 	font-size: 36px;
 }
+.default-icon {
+	width: 25px;
+}
+
+/*======================================== SLIDER DECIVE ========================================*/
 .scrolling-wrapper {
   overflow-x: scroll;
   overflow-y: hidden;
@@ -796,6 +834,8 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 	display: inline-block;
 	height: 500px;
 }
+/*======================================== SLIDER DECIVE ========================================*/
+
 /*========================================= MEDIA QUERY =========================================*/
 
 /* =======================LARGE DESKTOP DEVICES====================== 375*/
