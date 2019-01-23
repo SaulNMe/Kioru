@@ -15,7 +15,8 @@ $(function () {
 		}
 		if($(window).scrollTop()>window.innerHeight || document.getElementById("html-about-us") || 
 			document.getElementById("html-career") || document.getElementById("html-career-card") ||
-			document.getElementById("html-career-sent")){
+			document.getElementById("html-career-sent") || document.getElementById("html-blog") ||
+			document.getElementById("html-contact-us") || document.getElementById("html-contact-us-sent")){
 			if(ourCompany) {ourCompany.style.marginTop = 104 + "px";}
 			$('nav').addClass('sticky-nav');
 		} else {

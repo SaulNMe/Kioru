@@ -168,6 +168,9 @@ nav .sidenav-trigger {
 	background-color: var(--space-blue);
 	margin: 0;
 }
+#form {
+	margin-top: 64px;
+}
 #describe {
 	text-align: justify;
 	resize: none;
@@ -717,7 +720,7 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 	top: 47px;
 }
 .bg-team{
-	/* background-image: url("../images/team1.jpg"); */
+	background-image: url("../images/team1.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-color: #0E1B34;
