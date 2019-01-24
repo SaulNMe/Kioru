@@ -16,11 +16,12 @@ $(function () {
 		if($(window).scrollTop()>window.innerHeight || document.getElementById("html-about-us") || 
 			document.getElementById("html-career") || document.getElementById("html-career-card") ||
 			document.getElementById("html-career-sent") || document.getElementById("html-blog") ||
-			document.getElementById("html-contact-us") || document.getElementById("html-contact-us-sent")){
+			document.getElementById("html-contact-us") || document.getElementById("html-contact-us-sent") ||
+			document.getElementById("html-blog-new")){
 			if(ourCompany) {ourCompany.style.marginTop = 104 + "px";}
 			$('nav').addClass('sticky-nav');
 		} else {
-			ourCompany.style.marginTop = 40 + "px";
+			if(ourCompany) {ourCompany.style.marginTop = 40 + "px";}
 			$('nav').removeClass('sticky-nav')
 		}
 	}
@@ -53,6 +54,7 @@ $(function () {
 		let aboutUs = document.getElementById("about-us");
 		let removePadding = document.getElementById("remove-padding");
 		let careerCard = document.getElementById("career-card");
+		let addColumn = document.getElementById("add-column");
 		if(window.innerWidth <= 991){
 			if (servicesContainer && servicesContainer2 && removeWidth && removeWidth2){
 				handleClass("services-container", ["no-margin", "center", "column"], true);
@@ -76,6 +78,8 @@ $(function () {
 			}
 			if(removePadding){
 				handleClass("remove-padding", ["extra-horizontal-padding"], false);
+				handleClass("remove-padding", ["great-horizontal-padding"], false);
+				handleClass("add-column", ["column"], true);
 			}
 			if(document.getElementById("learn-about")){
 				document.getElementById("learn-about").innerHTML = "About Us";
@@ -109,7 +113,11 @@ $(function () {
 				aboutUs.classList.add("extra-horizontal-padding");
 			}
 			if(removePadding){
+				removePadding.classList.add("great-horizontal-padding");
 				removePadding.classList.add("extra-horizontal-padding");
+			}
+			if(addColumn){
+				addColumn.classList.remove("column")
 			}
 			if(careerCard){
 				careerCard.classList.add("extra-padding");

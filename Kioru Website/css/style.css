@@ -77,12 +77,28 @@ nav {
 }
 nav .sidenav-trigger {
     float: right;
+    display: flex
+}
+.material-icons{
+	margin-left: 5px;
+}
+nav ul li.active{
+	text-decoration: underline;
+	background-color: var(--coal-black);
+}
+nav ul li.active-marble-white{
+	text-decoration: underline;
+	background-color: var(--marble-white);
 }
 
 /* =========================================NAV BAR============================================= */
 
 
 /* =======================================SECTION ID============================================ */
+#html-about-us, #html-blog-new{
+	background-color: var(--marble-white)
+}
+
 #landscape {
 	background-image: url(../images/team1-small.png) ; 
 	background-repeat: no-repeat;
@@ -149,6 +165,7 @@ nav .sidenav-trigger {
 	background-color: var(--marble-white);
 }
 #blog-new {
+	margin-top: 64px;
 	position: relative;
 	background-color: var(--marble-white);
 }
@@ -299,6 +316,9 @@ nav .sidenav-trigger {
 .spacing-04{
 	letter-spacing: 0.04em;
 }
+.line-height-42 {
+	line-height: 42px !important;
+}
 /* ======================================TEXT TRANSFORM========================================= */
 
 /* ===============================VERTICAL AND HORIZONTAL PADDING=============================== */
@@ -329,11 +349,11 @@ nav .sidenav-trigger {
 .tiny-padding {
     padding: 8px 0px !important;
 }
-.top-big-vertical-padding{
-	padding-top: 32px;
+.top-big-vertical-padding {
+	padding-top: 32px !important;
 }
-.top-small-vertical-padding{
-	padding-top: 16px;
+.top-small-vertical-padding {
+	padding-top: 16px !important;
 }
 
 .extra-horizontal-padding {
@@ -360,6 +380,9 @@ nav .sidenav-trigger {
 .big-left-padding {
 	padding-left: 64px !important;
 }
+.big-right-padding {
+	padding-right: 64px !important;
+}
 .career-padding {
 	padding: 0px 360px 0px 120px;
 }
@@ -375,6 +398,10 @@ nav .sidenav-trigger {
 .no-margin{
 	margin: 0 !important;
 }
+.bottom-base-vertical-margin {
+	margin-bottom: 24px; 
+}
+
 .great-vertical-margin {
 	margin: 64px 0px;
 }
@@ -518,6 +545,9 @@ nav .sidenav-trigger {
 }
 .no-display {
 	display: none !important;
+}
+.flex {
+	display: flex;
 }
 .center {
 	position: relative;
@@ -893,6 +923,24 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 .default-icon {
 	width: 25px;
 }
+/*======================================= IMAGE TRANSFORM =======================================*/
+.img-author-tiny {
+	width: 60px;
+	height: 60px;
+	margin-right: 8px;
+	border-radius: 50%;
+}
+.img-author-base {
+	widows: 175px;
+	height: 175px;
+	margin-right: 8px;
+	border-radius: 50%;
+}
+.img-post {
+	width: 100%;
+
+}
+/*======================================= IMAGE TRANSFORM =======================================*/
 /*================================== IMAGE DEVICE ANIMATION =====================================*/
 .animation-device1{
 	top: 500px;

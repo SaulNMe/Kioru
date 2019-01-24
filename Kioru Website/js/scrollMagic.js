@@ -10,7 +10,7 @@ $(function () {
 		addImages(imagesIphoneCoteboard, 47, "images/movile2/iphone_coteboard");
 		addImages(imagesIphoneSaeko, 47, "images/movile/iphone_saeko");
 		addImages(imagesMac, 47, "images/saeko-imac/mac_saeko");
-		addImages(macBookPro, 47, "images/mac-book-pro/mac_opening");
+		addImages(macBookPro, 99, "images/mac-book-pro/mac_opening0");
 	})(window);
 
 	function addImages(yourVar, imagesNumber, path){
@@ -22,6 +22,10 @@ $(function () {
 
 			if (i>= 10 && i<100) {
 				urlImage = path + i + ".png"
+			}
+			if (i>=100) {
+				urlImage = path + i + ".png"
+			
 			}
 				yourVar.push(urlImage);
 		}
@@ -98,7 +102,6 @@ $(function () {
 		duration:  window.innerWidth > 991 ? 50 : 100
 	})
 	.setTween(tween)
-	.addIndicators({name: "first animation"})
 	.addTo(controller);
 
 	let movile2Animation = new ScrollMagic.Scene({
@@ -107,7 +110,6 @@ $(function () {
 		duration: window.innerWidth > 991 ? 50 : 100
 	})
 	.setTween(tween2)
-	.addIndicators({name: "second animation"})
 	.addTo(controller);
 
 	let macAnimation = new ScrollMagic.Scene({
@@ -116,7 +118,6 @@ $(function () {
 		duration: window.innerWidth > 991 ? 50 : 100
 	})
 	.setTween(tween3)
-	.addIndicators({name: "third animation"})
 	.addTo(controller);
 
 	let mac2Animation = new ScrollMagic.Scene({
@@ -125,7 +126,6 @@ $(function () {
 		duration: window.innerWidth > 991 ? 50 : 100
 	})
 	.setTween(tween4)
-	.addIndicators({name: "fourth animation"})
 	.addTo(controller);
 
 	let saeko2Animation = new ScrollMagic.Scene({
@@ -134,16 +134,14 @@ $(function () {
 		duration: window.innerWidth > 991 ? 50 : 100
 	})
 	.setTween(tween5)
-	.addIndicators({name: "fifth animation"})
 	.addTo(controller);
 
 	let macBookProAnimation = new ScrollMagic.Scene({
 		triggerElement: "#macBookPro",
-		triggerHook: 0.3,
-		duration: 130
+		triggerHook: 0.35,
+		duration: 100
 	})
 	.setTween(tween6)
-	.addIndicators({name: "sixth animation"})
 	.addTo(controller);
 
 
@@ -159,7 +157,6 @@ $(function () {
 		duration: 100
 	})
 	.setTween(tweenClass1)
-	.addIndicators({name: "device 1 animation"})
 	.addTo(controller);
 
 	let deviceAnimation2 = new ScrollMagic.Scene({
@@ -168,7 +165,6 @@ $(function () {
 		duration: 150
 	})
 	.setTween(tweenClass2)
-	.addIndicators({name: "device 2 animation"})
 	.addTo(controller);
 
 	let deviceAnimation3 = new ScrollMagic.Scene({
@@ -177,7 +173,6 @@ $(function () {
 		duration: 100
 	})
 	.setTween(tweenClass3)
-	.addIndicators({name: "device 3 animation"})
 	.addTo(controller);
 
 	let deviceAnimation4 = new ScrollMagic.Scene({
@@ -186,7 +181,6 @@ $(function () {
 		duration: 150
 	})
 	.setTween(tweenClass4)
-	.addIndicators({name: "device 4 animation"})
 	.addTo(controller);
 
 	let deviceAnimation5 = new ScrollMagic.Scene({
@@ -195,7 +189,6 @@ $(function () {
 		duration: 150
 	})
 	.setTween(tweenClass5)
-	.addIndicators({name: "device 5 animation"})
 	.addTo(controller);
 
 })
