@@ -101,9 +101,9 @@ nav .sidenav-trigger {
 	width: 100%;
 }
 #our-company {
-	position: relative;
+	z-index: 1;
+	background-color: var(--space-blue);
 	margin-top: 40px;
-	position: relative;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -111,7 +111,6 @@ nav .sidenav-trigger {
 	overflow: hidden;
 }
 #services {
-	position: relative;
 	width: 100%;
 	background-color: #101010;
 }
@@ -188,6 +187,30 @@ nav .sidenav-trigger {
 #experience {
 	position: relative;
 	overflow: hidden;
+}
+#device-container1 {
+	top: -500px;
+}
+#device-container2 {
+	top: -500px;
+}
+#device-container3 {
+	left: -480px;
+}
+#device-container4{
+	right: -183px;
+}
+#device-container5{
+	left: -183px
+}
+#device1 {
+	width: 65%;
+}
+#device2 {
+	width: 93%;
+}
+#device3{
+	width: 70%;
 }
 /* =======================================SECTION ID============================================ */
 :focus{
@@ -514,6 +537,9 @@ nav .sidenav-trigger {
 	float: right;
 	width: 100%;
 }
+.hidden {
+	overflow: hidden;
+}
 .relative {
 	position: relative;
 }
@@ -521,16 +547,28 @@ nav .sidenav-trigger {
 
 /* =========================================TRIGGERS============================================ */
 .trigger2 {
-	top: -30px;
+	top: -10px;
+}
+.trigger2-mobile {
+	top: 50px;
 }
 .trigger3 {
-	top: 20px;
+	top: -40px;
 }
 .trigger4 {
-	top: 50px;
+	top: 20px;
 }
 .trigger5{
 	top: 70px;
+}
+.trigger5-mobile{
+	top: 95px;
+}
+.trigger7 {
+	top: 30px;
+}
+.trigger8 {
+	top: 180px;
 }
 /* =========================================TRIGGERS============================================ */
 
@@ -576,6 +614,25 @@ nav .sidenav-trigger {
 	line-height: normal;
 }
 /* =============================================FONT WEIGHT========================================= */
+
+/*======================================== SLIDER DECIVE ========================================*/
+.scrolling-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  width: 100%;
+  -webkit-overflow-scrolling: touch !important;
+  
+}
+.pick {
+	display: inline-block;
+	height: 80px;
+}
+.pick2 {
+	display: inline-block;
+	height: 500px;
+}
+/*======================================== SLIDER DECIVE ========================================*/
 .full-width {
 	width: 100%;
 }
@@ -828,7 +885,7 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 .sticky-nav{
 	position: fixed;
 	top: 0;
-	z-index: 2;
+	z-index: 3;
 }
 .drop-cap{
 	font-size: 36px;
@@ -836,25 +893,25 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 .default-icon {
 	width: 25px;
 }
+/*================================== IMAGE DEVICE ANIMATION =====================================*/
+.animation-device1{
+	top: 500px;
+}
+.animation-device2{
+	top: 590px;
+}
+.animation-device3{
+	left: 396px;
+}
+.animation-device4{
+	right: 183px;
+}
+.animation-device5{
+	left: 183px;
+}
 
-/*======================================== SLIDER DECIVE ========================================*/
-.scrolling-wrapper {
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
-  width: 100%;
-  -webkit-overflow-scrolling: touch !important;
-  
-}
-.pick {
-	display: inline-block;
-	height: 80px;
-}
-.pick2 {
-	display: inline-block;
-	height: 500px;
-}
-/*======================================== SLIDER DECIVE ========================================*/
+/*================================== IMAGE DEVICE ANIMATION =====================================*/
+
 
 /*========================================= MEDIA QUERY =========================================*/
 
