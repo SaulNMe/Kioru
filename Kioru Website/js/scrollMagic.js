@@ -102,7 +102,6 @@ $(function () {
 		duration:  window.innerWidth > 991 ? 80 : 100
 	})
 	.setTween(tween)
-	.addIndicators({name: "movile 1"})
 	.addTo(controller);
 
 	let movile2Animation = new ScrollMagic.Scene({
@@ -112,7 +111,6 @@ $(function () {
 		duration: window.innerWidth > 991 ? 80 : 100
 	})
 	.setTween(tween2)
-	.addIndicators({name: "movile 2"})
 	.addTo(controller);
 
 	let macAnimation = new ScrollMagic.Scene({
@@ -122,7 +120,6 @@ $(function () {
 		duration: window.innerWidth > 991 ? 80 : 100
 	})
 	.setTween(tween3)
-	.addIndicators({name: "desktop"})
 	.addTo(controller);
 
 	let mac2Animation = new ScrollMagic.Scene({
@@ -132,7 +129,6 @@ $(function () {
 		duration: window.innerWidth > 991 ? 80 : 100
 	})
 	.setTween(tween4)
-	.addIndicators({name: "both 1"})
 	.addTo(controller);
 
 	let saeko2Animation = new ScrollMagic.Scene({
@@ -142,7 +138,6 @@ $(function () {
 		duration: window.innerWidth > 991 ? 50 : 100
 	})
 	.setTween(tween5)
-	.addIndicators({name: "both 2"})
 	.addTo(controller);
 
 	let macBookProAnimation = new ScrollMagic.Scene({
@@ -151,7 +146,6 @@ $(function () {
 		duration: 168
 	})
 	.setTween(tween6)
-	.addIndicators({name: "mac"})
 	.addTo(controller);
 
 
@@ -167,7 +161,6 @@ $(function () {
 		duration: 100
 	})
 	.setTween(tweenClass1)
-	.addIndicators({name: "device1"})
 	.addTo(controller);
 
 	let deviceAnimation2 = new ScrollMagic.Scene({
@@ -176,7 +169,6 @@ $(function () {
 		duration: 150
 	})
 	.setTween(tweenClass2)
-	.addIndicators({name: "device2"})
 	.addTo(controller);
 
 	let deviceAnimation3 = new ScrollMagic.Scene({
@@ -185,7 +177,6 @@ $(function () {
 		duration: 100
 	})
 	.setTween(tweenClass3)
-	.addIndicators({name: "device3"})
 	.addTo(controller);
 
 	let deviceAnimation4 = new ScrollMagic.Scene({
@@ -194,7 +185,6 @@ $(function () {
 		duration: 250
 	})
 	.setTween(tweenClass4)
-	.addIndicators({name: "tween 1"})
 	.addTo(controller);
 
 	let deviceAnimation5 = new ScrollMagic.Scene({
@@ -203,7 +193,6 @@ $(function () {
 		duration: 250
 	})
 	.setTween(tweenClass5)
-	.addIndicators({name: "tween 2"})
 	.addTo(controller);
 
 })
