@@ -99,49 +99,59 @@ $(function () {
 	let movile1Animation = new ScrollMagic.Scene({
 		triggerElement: window.innerWidth > 991 ? "#trigger1" : "#trigger1-mobile",
 		triggerHook: 0.3,
-		duration:  window.innerWidth > 991 ? 50 : 100
+		duration:  window.innerWidth > 991 ? 80 : 100
 	})
 	.setTween(tween)
+	.addIndicators({name: "movile 1"})
 	.addTo(controller);
 
 	let movile2Animation = new ScrollMagic.Scene({
 		triggerElement: window.innerWidth > 991 ? "#trigger2" : "#trigger2-mobile",
 		triggerHook: 0.3,
-		duration: window.innerWidth > 991 ? 50 : 100
+		offset: -20,
+		duration: window.innerWidth > 991 ? 80 : 100
 	})
 	.setTween(tween2)
+	.addIndicators({name: "movile 2"})
 	.addTo(controller);
 
 	let macAnimation = new ScrollMagic.Scene({
 		triggerElement: window.innerWidth > 991 ? "#trigger3" : "#trigger3-mobile",
 		triggerHook: 0.3,
-		duration: window.innerWidth > 991 ? 50 : 100
+		offset: -50,
+		duration: window.innerWidth > 991 ? 80 : 100
 	})
 	.setTween(tween3)
+	.addIndicators({name: "desktop"})
 	.addTo(controller);
 
 	let mac2Animation = new ScrollMagic.Scene({
 		triggerElement: window.innerWidth > 991 ? "#trigger4" : "#trigger4-mobile",
 		triggerHook: 0.3,
-		duration: window.innerWidth > 991 ? 50 : 100
+		offset: -55,
+		duration: window.innerWidth > 991 ? 80 : 100
 	})
 	.setTween(tween4)
+	.addIndicators({name: "both 1"})
 	.addTo(controller);
 
 	let saeko2Animation = new ScrollMagic.Scene({
 		triggerElement: window.innerWidth > 991 ? "#trigger5" : "#trigger5-mobile",
 		triggerHook: 0.3,
+		offset: -70,
 		duration: window.innerWidth > 991 ? 50 : 100
 	})
 	.setTween(tween5)
+	.addIndicators({name: "both 2"})
 	.addTo(controller);
 
 	let macBookProAnimation = new ScrollMagic.Scene({
 		triggerElement: "#macBookPro",
 		triggerHook: 0.35,
-		duration: 100
+		duration: 168
 	})
 	.setTween(tween6)
+	.addIndicators({name: "mac"})
 	.addTo(controller);
 
 
@@ -157,6 +167,7 @@ $(function () {
 		duration: 100
 	})
 	.setTween(tweenClass1)
+	.addIndicators({name: "device1"})
 	.addTo(controller);
 
 	let deviceAnimation2 = new ScrollMagic.Scene({
@@ -165,6 +176,7 @@ $(function () {
 		duration: 150
 	})
 	.setTween(tweenClass2)
+	.addIndicators({name: "device2"})
 	.addTo(controller);
 
 	let deviceAnimation3 = new ScrollMagic.Scene({
@@ -173,22 +185,25 @@ $(function () {
 		duration: 100
 	})
 	.setTween(tweenClass3)
+	.addIndicators({name: "device3"})
 	.addTo(controller);
 
 	let deviceAnimation4 = new ScrollMagic.Scene({
 		triggerElement: "#trigger9",
-		triggerHook: 0.3,
-		duration: 150
+		triggerHook: 0.5,
+		duration: 250
 	})
 	.setTween(tweenClass4)
+	.addIndicators({name: "tween 1"})
 	.addTo(controller);
 
 	let deviceAnimation5 = new ScrollMagic.Scene({
 		triggerElement: "#trigger9",
-		triggerHook: 0.3,
-		duration: 150
+		triggerHook: 0.5,
+		duration: 250
 	})
 	.setTween(tweenClass5)
+	.addIndicators({name: "tween 2"})
 	.addTo(controller);
 
 })
