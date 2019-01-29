@@ -123,6 +123,7 @@ $(function () {
 				careerCard.classList.add("extra-padding");
 			}
 		}
+		
 		/*var landscape = document.getElementById('landscape') ? document.getElementById('landscape') : null;
 		var navbar = document.getElementById('navbar');
 		var services = document.getElementById('services');
