@@ -303,8 +303,7 @@ $(function () {
 		// build scene
 		var sceneDrawing = new ScrollMagic.Scene({
 				triggerElement: "#trigger5", 
-				tweenChanges: false,
-				
+				tweenChanges: false
 			})
 			.setTween(tween7)
 			.addIndicators({name: "line 1"})
