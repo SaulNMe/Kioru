@@ -118,7 +118,6 @@ nav ul li.active-marble-white{
 #our-company {
 	z-index: 1;
 	background-color: var(--space-blue);
-	margin-top: 40px;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -239,32 +238,53 @@ nav ul li.active-marble-white{
 	background-repeat: no-repeat;
 	transition: opacity 2s ease-out;
 }
-
+#service-description{
+	height: 75px;
+	max-height: 300px;
+}
 /* =========================================== IDs ============================================ */
+/* ===================================== PULSE ANIMATION ====================================== */
+@keyframes pulse{
+	0% {
+    	transform: scale(1);
+  	}
+  	70% {
+    	transform: scale(1.1);
+  	}
+    100% {
+    	transform: scale(1);
+  	}
+}
+.service-animation:hover {
+	animation: pulse 0.3s 1;
+}
+/* ===================================== PULSE ANIMATION ====================================== */
 
 /* ================================== BODY BACKGROUND ANIMATION =============================== */
 #scroll-bg{
-	width: inherit;
-	height: inherit;
+	width: 100vw;
+	height: 100vh;
 	position: fixed;
 	left: 0;
 	top: 0;
+	right: 0;
+	bottom: 0;
 	opacity: 0;
 	visibility: visible;
-	background-repeat: no-repeat !important;
-	background-attachment: fixed !important;
+	background-attachment: scroll !important;
 	background-size: cover !important;
 }
 .bg1{
 	background: url("../images/bg-1.png"), linear-gradient(180deg, #1E88E5 0%, #2D9CDB 100%);
-	z-index: 0;
+	z-index: -1;
 }
 .bg2{
 	background: url("../images/bg-2.png"), linear-gradient(180deg, #1E88E5 0%, #2D9CDB 100%);
-	z-index: 1;
+	z-index: 0;
 }
-.bgimage-2{
-	background: url("../images/bg-2.png"),linear-gradient(180deg, #1E88E5 0%, #2D9CDB 100%);
+.bg3{
+	background: url("../images/bg-3.png"), linear-gradient(180deg, #1E88E5 0%, #2D9CDB 100%);
+	z-index: 1;
 }
 /* ================================== BODY BACKGROUND ANIMATION =============================== */
 
@@ -386,6 +406,9 @@ nav ul li.active-marble-white{
 }
 .tiny-padding {
     padding: 8px 0px !important;
+}
+.top-big-vertical-padding2{
+	padding-top: 63px !important;
 }
 .top-big-vertical-padding {
 	padding-top: 32px !important;
@@ -855,16 +878,7 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 .button-transparent:hover a {
 	color: var(--grayer-out);
 }
-.service1 {
-	width: 100%;
-	height: 100%;
-	background-attachment: fixed;
-	background-image: url("../images/saeko-services/saeko-admin.png");
-	background-size: cover;
-	background-repeat: no-repeat;
-}
-.services1:hover {
-}
+
 /*=========================================BUTTON TRANSPARENT====================================*/
 
 .team {
@@ -971,6 +985,14 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 .default-icon {
 	width: 25px;
 }
+.medium-section-blue{
+	z-index: 3;
+	background: transparent !important;
+	height: 20vh;
+	width: 100vw;
+	justify-content: center;
+	flex-direction: column;
+}
 .section-blue {
 	z-index: 2;
 	background: transparent !important;
@@ -1048,18 +1070,41 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 .scrolldown{
 	position: relative;
 }
+#service-description{
+	z-index: 2;
+	position: relative;
+	overflow: hidden;
+}
 #scroll-line{
 	position: absolute;
-	height: 280px;
-	border-left: var(--marble-white) dashed 5px;
+	height: 0px;
+	border-left: var(--marble-white) dashed 3px;
 	left: 50%;
 }
 #scroll-line2{
 	position: absolute;
-	width: 600px;
+	width: 0px;
 	left: 50%;
 	top: 50%;
-	border-bottom: var(--marble-white) dashed 5px;
+	border-bottom: var(--marble-white) dashed 3px;
+}
+#scroll-line3{
+	z-index: 1;
+	position: absolute;
+	height: 0px;
+	left: 50%;
+	border-left: var(--marble-white) dashed 3px;
+}
+#scroll-line4{
+	z-index: 1;
+	position: absolute;
+	height: 0px;
+	left: 50%;
+	border-left: var(--marble-white) dashed 3px;
+}
+#service1, #service2, #service3, #service4{
+	width: 120px;
+	height: 120px;
 }
 /*================================== LINE 1 VERTICAL ANIMATION ==================================*/
 
@@ -1148,6 +1193,14 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 		display: block;
 	}
 	
+	#scroll-line2{
+		width: 360px;
+	}
+
+	#service1, #service2, #service3, #service4{
+	width: 80px;
+	height: 80px;
+	}
 }
 /* =======================TABLE DEVICES====================== 375*/
 
@@ -1185,6 +1238,16 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 	}
 	.mobile {
 		display: block;
+	}
+	#scroll-line{
+		height: 350px;
+	}
+	#scroll-line2{
+		width: 200px;
+	}
+	#service1, #service2, #service3, #service4{
+	width: 50px;
+	height: 50px;
 	}
 }
 /* =======================MOVILE DEVICES====================== 375*/

@@ -3,26 +3,57 @@ $(function () {
 	(function( window) {
 		resize();
 		onScroll();
+		if(document.getElementById("html-portfolios")){
+			let textChange = document.getElementById("service-description")
+			hoverImage('service1', ["images/saeko-services/saeko-admin-unfill.png", 
+				"images/saeko-services/saeko-admin.png"], textChange, 
+				"Saeko para administradores de escuelas, ahorra tiempo, evita errores y mejora la eficiencia.")
+			hoverImage('service2', ["images/saeko-services/saeko-prof-unfill.png", 
+				"images/saeko-services/saeko-prof.png"], textChange, 
+				"Gestión de actividades de clase, organización y control del progreso de los estudiantes, diseño y publicación evaluaciones.")
+			hoverImage('service3', ["images/saeko-services/saeko-stu-unfill.png", 
+				"images/saeko-services/saeko-stu.png"], textChange, 
+				"Visualización de horarios, información de actividades diarias, recepción de calificaciones, comunicación con docentes.")
+			hoverImage('service4', ["images/saeko-services/saeko-fam-unfill.png", 
+				"images/saeko-services/saeko-fam.png"], textChange, 
+				"Conoce calificaciones, pagos, horarios y actividades, enterate de todo lo que pasa en tu escuela")
+
+			}
 	})(window);
 	
 	$(window).scroll(function(){
 		onScroll()
 		
 	})
+	function hoverImage(element, path, label, text) {
+		let elementId = document.getElementById(element);
+		
+		elementId.addEventListener("mouseover", function(){
+			elementId.setAttribute('src', path[0]);
+			label.innerHTML = text
+		})
+		elementId.addEventListener("mouseout", function(){
+			elementId.setAttribute('src', path[1]);
+		})
+
+	}
 	function onScroll(){
 		if (document.getElementById("our-company")){
 			var ourCompany = document.getElementById("our-company");
 		}
+
 		if($(window).scrollTop()>window.innerHeight || document.getElementById("html-about-us") || 
 			document.getElementById("html-career") || document.getElementById("html-career-card") ||
 			document.getElementById("html-career-sent") || document.getElementById("html-blog") ||
 			document.getElementById("html-contact-us") || document.getElementById("html-contact-us-sent") ||
 			document.getElementById("html-blog-new")){
-			if(ourCompany) {ourCompany.style.marginTop = 104 + "px";}
-			$('nav').addClass('sticky-nav');
+			if(ourCompany){
+				ourCompany.style.marginTop = 65 + "px";}
+				$('nav').addClass('sticky-nav');
 		} else {
-			if(ourCompany) {ourCompany.style.marginTop = 40 + "px";}
-			$('nav').removeClass('sticky-nav')
+			if(ourCompany){
+				ourCompany.style.marginTop = 0 + "px";}
+				$('nav').removeClass('sticky-nav')
 		}
 	}
 
@@ -70,8 +101,10 @@ $(function () {
 				handleClass("remove-width3", ["full-width"], false);
 				handleClass("remove-width3", ["responsive-button-padding"], true);
 			}
-			handleClass("footer-coal", ["coal-black-bg"], false);
-			handleClass("footer-coal", ["valign-wrapper"], false);
+			if(document.getElementById("footer")){
+				handleClass("footer-coal", ["coal-black-bg"], false);
+				handleClass("footer-coal", ["valign-wrapper"], false);
+			}
 			if(aboutUs){
 				handleClass("about-us", ["extra-horizontal-padding"], false);
 				handleClass("about-us", ["base-horizontal-padding"], true)
@@ -92,8 +125,10 @@ $(function () {
 				handleClass("career-card", ["base-horizontal-padding"], true);
 			}
 		} else {
-			handleClass("footer-coal", ["coal-black-bg"], true);
-			handleClass("footer-coal", ["valign-wrapper"], true);
+			if(document.getElementById("footer")){
+				handleClass("footer-coal", ["coal-black-bg"], true);
+				handleClass("footer-coal", ["valign-wrapper"], true);
+			}
 			if(document.getElementById("learn-about")){
 				document.getElementById("learn-about").text =  "Learn more about us";
 			}
@@ -123,6 +158,7 @@ $(function () {
 				careerCard.classList.add("extra-padding");
 			}
 		}
+
 		
 		/*var landscape = document.getElementById('landscape') ? document.getElementById('landscape') : null;
 		var navbar = document.getElementById('navbar');
@@ -151,5 +187,7 @@ $(function () {
 		callToAction ? callToAction.style.width = w : null;
 		footer.style.width = w;*/
 	}
-	 $('.sidenav').sidenav();
+	if(document.getElementById("navbar")){
+		$('.sidenav').sidenav();
+	}
 });

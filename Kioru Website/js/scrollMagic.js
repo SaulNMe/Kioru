@@ -195,17 +195,13 @@ $(function () {
 	.setTween(tweenClass5)
 	.addTo(controller);
 
-	var macBookProScene = new ScrollMagic.Scene({
-		triggerElement: "#trigger2",
-		triggerHook: 0.6,
-		offset: -80,
-		duration: 100
-	})
-	.setTween(tween6)
-	.addTo(controller);
 
-	/*================================= CHANGING SCENE ========================================*/
+
+	if(document.getElementById('html-portfolios')){
+/*================================= CHANGING SCENE ========================================*/
 	let tween8 = new TweenMax.to("#scroll-bg", 1.5, { opacity: 1})
+	let tween9 = new TweenMax.to(".bg2", 1.5, { opacity: 1})
+	let tween10 = new TweenMax.to(".bg3", 1.5, {opacity: 1})
 
 	let bgAnimation1 = new ScrollMagic.Scene({
 		triggerElement: ".scrolldown",
@@ -216,8 +212,6 @@ $(function () {
 	.setTween(tween8)
 	.addTo(controller);
 
-	let tween9 = new TweenMax.to(".bg2", 1.5, { opacity: 1})
-
 	let bgAnimation2 = new ScrollMagic.Scene({
 		triggerElement: "#section-horizontal",
 		triggerHook: 0.2,
@@ -225,90 +219,147 @@ $(function () {
 		duration: 300
 	})	
 	.setTween(tween9)
-	.addIndicators({name: "changing"})
+	.addTo(controller);
+
+	let bgAnimation3 = new ScrollMagic.Scene({
+		triggerElement: "#section-horizontal2",
+		triggerHook: 0.3,
+		offset: -100,
+		duration:300
+	})
+	.setTween(tween10)
 	.addTo(controller);
 	/*================================= CHANGING SCENE ========================================*/
-
-function pathPrepare ($el) {
-		var lineLength = $el[0].getTotalLength();
-		$el.css("stroke-dasharray", lineLength);
-		$el.css("stroke-dashoffset", lineLength);
-	}
-
-	var $s = $("path#s");
-	var $a = $("path#a");
-	var $e = $("path#e");
-	var $k = $("path#k");
-	var $o = $("path#o");
-	var $r = $("path#r");
-	var $dot1 = $("path#dot1");
-	var $dot2 = $("path#dot2");
-	var $dot3 = $("path#dot3");
-
-	// prepare SVG
-	pathPrepare($s);
-	pathPrepare($a);
-	pathPrepare($e);
-	pathPrepare($k);
-	pathPrepare($o);
-	pathPrepare($r);
-	pathPrepare($dot1);
-	pathPrepare($dot2);
-	pathPrepare($dot3);
-
-	// build tween3
-	var tween7 = new TimelineMax()
-		.add(TweenMax.to($s, 0.9, {stroke: "#fff", strokeDashoffset: 0, ease:Linear.easeNone}))
-		.add(TweenMax.to($a, 0.7, {stroke: "#fff", strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.1
-		.add(TweenMax.to($e, 0.5, {stroke: "#fff", strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.1
-		.add(TweenMax.to($k, 0.3, {stroke: "#fff", strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.1
-		.add(TweenMax.to($o, 0.3, {stroke: "#fff", strokeDashoffset: 0, ease:Linear.easeNone}))  // draw dot for 0.1
-		.add(TweenMax.to($r, 0.2, {stroke: "#fff", strokeDashoffset: 0, ease:Linear.easeNone}))  // draw dot for 0.2
-		.add(TweenMax.to($dot2, 0.5, {stroke: "#BF209F", strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.1
-		.add(TweenMax.to($dot1, 0.3, {stroke: "#2D9CDB", strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.1
-		.add(TweenMax.to($dot3, 0.1, {stroke: "#50C53A", strokeDashoffset: 0, ease:Linear.easeNone, onComplete: function () {
-			new ScrollMagic.Scene({
-				triggerElement: "#k",
-			})
-			.setClassToggle("#s, #a, #e, #k, #o, #r", "filling_saeko_main")
-			.addTo(controller);
-
-			new ScrollMagic.Scene({
-				triggerElement: "#k",
-			})
-			.setClassToggle("#dot1", "fill_blue")
-			.addTo(controller);
-
-			new ScrollMagic.Scene({
-				triggerElement: "#k",
-			})
-			.setClassToggle("#dot2", "fill_purple")
-			.addTo(controller);
-
-			new ScrollMagic.Scene({
-				triggerElement: "#k",
-			})
-			.setClassToggle("#dot3", "fill_green")
-			.addTo(controller);
-		}})) // draw word for 0.1
-		.add(TweenMax.to("path", 1, {ease:Linear.easeNone}))
-	// build scene
-	var sceneDrawing = new ScrollMagic.Scene({
-			triggerElement: "#trigger5", 
-			tweenChanges: false
-		})
-		.setTween(tween7)
-		.addTo(controller);
-
-	let horizontalSlide = new TimelineMax().to(".ul", 1, {left: "-100%"});
-	new ScrollMagic.Scene({
-		triggerElement: "#section-horizontal",
-		triggerHook: "onLeave",
-		duration: "200%"
+	var macBookProScene = new ScrollMagic.Scene({
+		triggerElement: "#trigger2",
+		triggerHook: 0.6,
+		offset: -80,
+		duration: 100
 	})
-	.setPin("#section-horizontal")
-	.setTween(horizontalSlide)
+	.setTween(tween6)
 	.addTo(controller);
 
+		function pathPrepare ($el) {
+			var lineLength = $el[0].getTotalLength();
+			$el.css("stroke-dasharray", lineLength);
+			$el.css("stroke-dashoffset", lineLength);
+		}
+		
+		var $s = $("path#s");
+		var $a = $("path#a");
+		var $e = $("path#e");
+		var $k = $("path#k");
+		var $o = $("path#o");
+		var $r = $("path#r");
+		var $dot1 = $("path#dot1");
+		var $dot2 = $("path#dot2");
+		var $dot3 = $("path#dot3");
+		// prepare SVG
+		pathPrepare($s);
+		pathPrepare($a);
+		pathPrepare($e);
+		pathPrepare($k);
+		pathPrepare($o);
+		pathPrepare($r);
+		pathPrepare($dot1);
+		pathPrepare($dot2);
+		pathPrepare($dot3);
+		// build tween3
+		var tween7 = new TimelineMax()
+			.add(TweenMax.to($s, 0.9, {stroke: "#fff", strokeDashoffset: 0, ease:Linear.easeNone}))
+			.add(TweenMax.to($a, 0.7, {stroke: "#fff", strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.1
+			.add(TweenMax.to($e, 0.5, {stroke: "#fff", strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.1
+			.add(TweenMax.to($k, 0.3, {stroke: "#fff", strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.1
+			.add(TweenMax.to($o, 0.3, {stroke: "#fff", strokeDashoffset: 0, ease:Linear.easeNone}))  // draw dot for 0.1
+			.add(TweenMax.to($r, 0.2, {stroke: "#fff", strokeDashoffset: 0, ease:Linear.easeNone}))  // draw dot for 0.2
+			.add(TweenMax.to($dot2, 0.5, {stroke: "#BF209F", strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.1
+			.add(TweenMax.to($dot1, 0.3, {stroke: "#2D9CDB", strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.1
+			.add(TweenMax.to($dot3, 0.1, {stroke: "#50C53A", strokeDashoffset: 0, ease:Linear.easeNone, onComplete: function () {
+				new ScrollMagic.Scene({
+					triggerElement: "#k",
+				})
+				.setClassToggle("#s, #a, #e, #k, #o, #r", "filling_saeko_main")
+				.addTo(controller);
+
+				new ScrollMagic.Scene({
+					triggerElement: "#k",
+				})
+				.setClassToggle("#dot1", "fill_blue")
+				.addTo(controller);
+
+				new ScrollMagic.Scene({
+					triggerElement: "#k",
+				})
+				.setClassToggle("#dot2", "fill_purple")
+				.addTo(controller);
+
+				new ScrollMagic.Scene({
+					triggerElement: "#k",
+				})
+				.setClassToggle("#dot3", "fill_green")
+				.addTo(controller);
+			}})) // draw word for 0.1
+			.add(TweenMax.to("path", 1, {ease:Linear.easeNone}))
+		// build scene
+		var sceneDrawing = new ScrollMagic.Scene({
+				triggerElement: "#trigger5", 
+				tweenChanges: false,
+				
+			})
+			.setTween(tween7)
+			.addIndicators({name: "line 1"})
+			.addTo(controller);
+
+		let horizontalSlide = new TimelineMax().to(".ul", 1, {left: "-100%"});
+		new ScrollMagic.Scene({
+			triggerElement: "#section-horizontal",
+			triggerHook: "onLeave",
+			duration: "200%"
+		})
+		.setPin("#section-horizontal")
+		.setTween(horizontalSlide)
+		.addTo(controller);
+
+		let scrollLineTween1 = new TimelineMax().to("#scroll-line", 1, {height: "280px"})
+		let scrollLineTween2 = new TimelineMax().to("#scroll-line2", 1, {width: "550px"})
+		let scrollLineTween3 = new TimelineMax().to("#scroll-line3", 1, {height: "60px"})
+		let scrollLineTween4 = new TimelineMax().to("#scroll-line4", 1, {height: "300px"})
+
+		let scrollLineAnimation1 = new ScrollMagic.Scene({
+			triggerElement: "#r",
+			triggerHook: 0.4,
+			duration: 500
+		})
+		.setTween(scrollLineTween1)
+		.addTo(controller)
+
+		let scrollLineAnimation2 = new ScrollMagic.Scene({
+			triggerElement: "#scroll-line",
+			triggerHook: 0.4,
+			duration: 500,
+			offset: 500
+		})
+		.setTween(scrollLineTween2)
+		.addTo(controller)
+
+		let scrollLineAnimation3 = new ScrollMagic.Scene({
+			triggerElement: "#scroll-line3",
+			triggerHook: 0.4,
+			duration: 50,
+			offset: 0
+		})
+		.setTween(scrollLineTween3)
+		.addTo(controller)
+
+		let scrollLineAnimation4 = new ScrollMagic.Scene({
+			triggerElement: "#scroll-line4",
+			triggerHook: 0.4,
+			duration: 400,
+			offset: 0
+		})
+		.setPin("#scroll-line")
+		.setTween(scrollLineTween4)
+		.addTo(controller)
+	}
 
 })
