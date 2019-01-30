@@ -65,7 +65,7 @@ $(function () {
 	/*Function for adding and deleting clases if an element in HTMl*/
 	function handleClass(element, clases, add){
 		var idElement = document.getElementById(element);
-		$.each(clases, function(i, val){
+		$.each(clases, (i, val) => {
 			if (add) {
 				idElement.classList.add(val);
 			}

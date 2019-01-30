@@ -1023,14 +1023,8 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 /*====================================== SECTION HORIZONTAL =====================================*/
 
 /*===================================== SAEKO SVG ANIMATION =====================================*/
-.saeko_logo_r{
-
-	stroke-linecap: round; 
-	stroke-linejoin: round; 
-	stroke-dasharray: 23px; 
-	stroke-dashoffset: 23px;
-	fill: transparent;
-	transition: fill 0.3s ease-in;
+.saeko_svg{
+	position: relative;
 }
 .saeko_logo_dot{
 	stroke-linecap: round; 
@@ -1048,9 +1042,11 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 	fill: transparent;
 	transition: fill 0.3s ease-in;
 }
-
+.unfill{
+	fill: none;
+}
 .filling_saeko_main{
-	fill: white;
+	fill: var(--marble-white);
 }
 
 .fill_purple {

@@ -245,69 +245,84 @@ $(function () {
 			$el.css("stroke-dashoffset", lineLength);
 		}
 		
-		var $s = $("path#s");
-		var $a = $("path#a");
-		var $e = $("path#e");
-		var $k = $("path#k");
-		var $o = $("path#o");
-		var $r = $("path#r");
+		var $s    = $("path#s");
+		var $aeko = $("path#aeko");
 		var $dot1 = $("path#dot1");
+		var $dot1_1 = $("path#dot1_1");
+		var $dot2_2 = $("path#dot2_2");
+		var $dot3_3 = $("path#dot3_3");
 		var $dot2 = $("path#dot2");
 		var $dot3 = $("path#dot3");
 		// prepare SVG
 		pathPrepare($s);
-		pathPrepare($a);
-		pathPrepare($e);
-		pathPrepare($k);
-		pathPrepare($o);
-		pathPrepare($r);
+		pathPrepare($aeko);
 		pathPrepare($dot1);
+		pathPrepare($dot1_1);
+		pathPrepare($dot2_2);
+		pathPrepare($dot3_3);
 		pathPrepare($dot2);
 		pathPrepare($dot3);
-		// build tween3
+
 		var tween7 = new TimelineMax()
 			.add(TweenMax.to($s, 0.9, {stroke: "#fff", strokeDashoffset: 0, ease:Linear.easeNone}))
-			.add(TweenMax.to($a, 0.7, {stroke: "#fff", strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.1
-			.add(TweenMax.to($e, 0.5, {stroke: "#fff", strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.1
-			.add(TweenMax.to($k, 0.3, {stroke: "#fff", strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.1
-			.add(TweenMax.to($o, 0.3, {stroke: "#fff", strokeDashoffset: 0, ease:Linear.easeNone}))  // draw dot for 0.1
-			.add(TweenMax.to($r, 0.2, {stroke: "#fff", strokeDashoffset: 0, ease:Linear.easeNone}))  // draw dot for 0.2
-			.add(TweenMax.to($dot2, 0.5, {stroke: "#BF209F", strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.1
-			.add(TweenMax.to($dot1, 0.3, {stroke: "#2D9CDB", strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.1
-			.add(TweenMax.to($dot3, 0.1, {stroke: "#50C53A", strokeDashoffset: 0, ease:Linear.easeNone, onComplete: function () {
+			.add(TweenMax.to($aeko, 2.7, {stroke: "#fff", strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.1
+			.add(TweenMax.to($dot1, 0.3, {stroke: "#BF209F", strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.1
+			.add(TweenMax.to($dot1_1, 0.5, {stroke: "#BF209F", strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.1
+			.add(TweenMax.to($dot2, 0.3, {stroke: "#2D9CDB", strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.1
+			.add(TweenMax.to($dot2_2, 0.5, {stroke: "#2D9CDB", strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.1
+			.add(TweenMax.to($dot3, 0.3, {stroke: "#50C53A", strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.1
+			.add(TweenMax.to($dot3_3, 0.5, {stroke: "#50C53A", strokeDashoffset: 0, ease:Linear.easeNone, onComplete: function () {
 				new ScrollMagic.Scene({
-					triggerElement: "#k",
+					triggerElement: "#aeko"
 				})
-				.setClassToggle("#s, #a, #e, #k, #o, #r", "filling_saeko_main")
+				.setClassToggle("#s, #aeko", "filling_saeko_main")
 				.addTo(controller);
 
 				new ScrollMagic.Scene({
-					triggerElement: "#k",
+					triggerElement: "#aeko"
 				})
-				.setClassToggle("#dot1", "fill_blue")
+				.setClassToggle("#dot1, #dot1_1", "fill_purple")
 				.addTo(controller);
 
 				new ScrollMagic.Scene({
-					triggerElement: "#k",
+					triggerElement: "#aeko"
 				})
-				.setClassToggle("#dot2", "fill_purple")
+				.setClassToggle("#dot2, #dot2_2", "fill_blue")
 				.addTo(controller);
 
 				new ScrollMagic.Scene({
-					triggerElement: "#k",
+					triggerElement: "#aeko"
 				})
-				.setClassToggle("#dot3", "fill_green")
+				.setClassToggle("#dot3, #dot3_3", "fill_green")
 				.addTo(controller);
-			}})) // draw word for 0.1
-			.add(TweenMax.to("path", 1, {ease:Linear.easeNone}))
+			}, onReverseComplete: () => {
+				if (document.getElementById("s")) {
+					let s = document.getElementById("s");
+					if (s.classList.contains('filling_saeko_main')){
+						removeClassList(["s", "aeko", "dot1", "dot1_1", "dot2", "dot2_2", "dot3", "dot3_3"], ["filling_saeko_main", "fill_blue", "fill_purple", "fill_green"])
+					} else {
+						console.log("class not found")
+					}
+					function removeClassList(elements, classes){
+						$.each(elements, (i, elem) => {
+							let idElement = document.getElementById(elem);
+							$.each(classes, (j, className) => {
+								idElement.classList.remove(className);
+							})
+						})
+					}
+				}
+
+			}}))
 		// build scene
 		var sceneDrawing = new ScrollMagic.Scene({
-				triggerElement: "#trigger5", 
-				tweenChanges: false
-			})
-			.setTween(tween7)
-			.addIndicators({name: "line 1"})
-			.addTo(controller);
+				triggerElement: "#trigger5",
+				triggerHook: 0.1,
+				duration: 100,
+				offset: -49
+		})
+		.setTween(tween7)
+		.addTo(controller);
 
 		let horizontalSlide = new TimelineMax().to(".ul", 1, {left: "-100%"});
 		new ScrollMagic.Scene({
