@@ -12,6 +12,36 @@
 	H5:18
 	H6:14
 */
+html{
+	scroll-behavior: smooth;
+}
+
+
+/* #body::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+#body::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+#body::-webkit-scrollbar-thumb
+{
+	background-color: #FF005E;	
+	background-image: -webkit-linear-gradient(45deg,
+	                                          rgba(255, 255, 255, .2) 25%,
+											  transparent 25%,
+											  transparent 50%,
+											  rgba(255, 255, 255, .2) 50%,
+											  rgba(255, 255, 255, .2) 75%,
+											  transparent 75%,
+											  transparent)
+} */
+
 a {
 	text-decoration: none;
 	color: var(--marble-white);	
@@ -254,6 +284,9 @@ nav ul li.active-marble-white{
     100% {
     	transform: scale(1);
   	}
+}
+.path-animation {
+	animation: pulse 0.3s 2;
 }
 .service-animation:hover {
 	animation: pulse 0.3s 1;
@@ -985,6 +1018,9 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 .default-icon {
 	width: 25px;
 }
+.animate-top{
+
+}
 .medium-section-blue{
 	z-index: 3;
 	background: transparent !important;
@@ -1025,6 +1061,7 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 /*===================================== SAEKO SVG ANIMATION =====================================*/
 .saeko_svg{
 	position: relative;
+
 }
 .saeko_logo_dot{
 	stroke-linecap: round; 

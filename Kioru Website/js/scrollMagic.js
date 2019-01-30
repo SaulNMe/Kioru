@@ -3,14 +3,18 @@ $(function () {
 
 	let imagesIphoneCoteboard = [];
 	let imagesIphoneSaeko = [];
-	let imagesMac = [];
+	let imagesMexico = [];
 	let macBookPro = [];
+	let imagesMac = [];
+	let body = document.getElementById("body");
 
 	(function(){
+		window.scrollTo(0,0);
 		addImages(imagesIphoneCoteboard, 47, "images/movile2/iphone_coteboard");
 		addImages(imagesIphoneSaeko, 47, "images/movile/iphone_saeko");
 		addImages(imagesMac, 47, "images/saeko-imac/mac_saeko");
 		addImages(macBookPro, 99, "images/mac-book-pro/mac_opening0");
+		addImages(imagesMexico, 59, "images/mexico/mapas")
 	})(window);
 
 	function addImages(yourVar, imagesNumber, path){
@@ -264,14 +268,14 @@ $(function () {
 		pathPrepare($dot3);
 
 		var tween7 = new TimelineMax()
-			.add(TweenMax.to($s, 0.9, {stroke: "#fff", strokeDashoffset: 0, ease:Linear.easeNone}))
-			.add(TweenMax.to($aeko, 2.7, {stroke: "#fff", strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.1
-			.add(TweenMax.to($dot1, 0.3, {stroke: "#BF209F", strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.1
-			.add(TweenMax.to($dot1_1, 0.5, {stroke: "#BF209F", strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.1
-			.add(TweenMax.to($dot2, 0.3, {stroke: "#2D9CDB", strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.1
-			.add(TweenMax.to($dot2_2, 0.5, {stroke: "#2D9CDB", strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.1
-			.add(TweenMax.to($dot3, 0.3, {stroke: "#50C53A", strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.1
-			.add(TweenMax.to($dot3_3, 0.5, {stroke: "#50C53A", strokeDashoffset: 0, ease:Linear.easeNone, onComplete: function () {
+			.add(TweenMax.to($s, 0.8, {stroke: "#fff", strokeDashoffset: 0, ease:Linear.easeNone}))
+			.add(TweenMax.to($aeko, 2, {stroke: "#fff", strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.1
+			.add(TweenMax.to($dot1, 0.2, {stroke: "#BF209F", strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.1
+			.add(TweenMax.to($dot1_1, 0.4, {stroke: "#BF209F", strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.1
+			.add(TweenMax.to($dot2, 0.2, {stroke: "#2D9CDB", strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.1
+			.add(TweenMax.to($dot2_2, 0.4, {stroke: "#2D9CDB", strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.1
+			.add(TweenMax.to($dot3, 0.2, {stroke: "#50C53A", strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.1
+			.add(TweenMax.to($dot3_3, 0.4, {stroke: "#50C53A", strokeDashoffset: 0, ease:Linear.easeNone, onComplete: function () {
 				new ScrollMagic.Scene({
 					triggerElement: "#aeko"
 				})
@@ -295,34 +299,43 @@ $(function () {
 				})
 				.setClassToggle("#dot3, #dot3_3", "fill_green")
 				.addTo(controller);
+				let mainSaekoLogo = document.getElementById("saeko_svg");
+				mainSaekoLogo.classList.add("path-animation");
+				body.classList.remove("hidden");
 			}, onReverseComplete: () => {
 				if (document.getElementById("s")) {
 					let s = document.getElementById("s");
 					if (s.classList.contains('filling_saeko_main')){
-						removeClassList(["s", "aeko", "dot1", "dot1_1", "dot2", "dot2_2", "dot3", "dot3_3"], ["filling_saeko_main", "fill_blue", "fill_purple", "fill_green"])
-					} else {
-						console.log("class not found")
+						removeClassList(["s", "aeko", "dot1", "dot1_1", "dot2", "dot2_2", "dot3", "dot3_3", "saeko_svg"], ["filling_saeko_main", "fill_blue", "fill_purple", "fill_green", "path-animation"], true)
 					}
-					function removeClassList(elements, classes){
-						$.each(elements, (i, elem) => {
-							let idElement = document.getElementById(elem);
-							$.each(classes, (j, className) => {
-								idElement.classList.remove(className);
+					function removeClassList(elements, classes, remove){
+						if (remove) {
+							$.each(elements, (i, elem) => {
+								let idElement = document.getElementById(elem);
+								$.each(classes, (j, className) => {
+									idElement.classList.remove(className);
+								})
 							})
-						})
+						}
 					}
 				}
 
 			}}))
 		// build scene
 		var sceneDrawing = new ScrollMagic.Scene({
-				triggerElement: "#trigger5",
-				triggerHook: 0.1,
-				duration: 100,
-				offset: -49
+			triggerElement: "#trigger5",
+			triggerHook: 0.1,
+			offset: -100
 		})
 		.setTween(tween7)
+		.addIndicators({name: "saeko"})
+		.on("start", () => {
+			body.classList.add("hidden");
+		})
 		.addTo(controller);
+		var sceneDrawingMoving = new ScrollMagic.Scene({
+
+		})
 
 		let horizontalSlide = new TimelineMax().to(".ul", 1, {left: "-100%"});
 		new ScrollMagic.Scene({
@@ -334,17 +347,19 @@ $(function () {
 		.setTween(horizontalSlide)
 		.addTo(controller);
 
-		let scrollLineTween1 = new TimelineMax().to("#scroll-line", 1, {height: "280px"})
+		let scrollLineTween1 = new TimelineMax().to("#scroll-line", 1.5, {height: "200px"})
 		let scrollLineTween2 = new TimelineMax().to("#scroll-line2", 1, {width: "550px"})
 		let scrollLineTween3 = new TimelineMax().to("#scroll-line3", 1, {height: "60px"})
 		let scrollLineTween4 = new TimelineMax().to("#scroll-line4", 1, {height: "300px"})
 
 		let scrollLineAnimation1 = new ScrollMagic.Scene({
-			triggerElement: "#r",
-			triggerHook: 0.4,
-			duration: 500
+			triggerElement: "#aeko",
+			triggerHook: 0.6,
+			duration: 300,
+			offset: 200
 		})
 		.setTween(scrollLineTween1)
+		.addIndicators({name: "line 1"})
 		.addTo(controller)
 
 		let scrollLineAnimation2 = new ScrollMagic.Scene({
