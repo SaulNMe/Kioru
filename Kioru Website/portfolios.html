@@ -7,6 +7,7 @@
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link type="text/css" rel="stylesheet" href="css/materialize.min.css"/>
 		<link rel="stylesheet" href="css/style.css">
+		<link rel="icon" href="images/kioru-icon.ico">
 		<link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:200,300,400,500,600,700|Fira+Sans:200,300,400,500,600,700" rel="stylesheet">
 		<script src="https://unpkg.com/feather-icons"></script>
 	</head>
@@ -15,8 +16,9 @@
 			<div id="scroll-bg" class="bg1"></div>
 			<div id="scroll-bg" class="bg2"></div>
 			<div id="scroll-bg" class="bg3"></div>
+			<div id="scroll-bg" class="bg4"></div>
 			<div class="row no-margin relative">
-				<div class="col l12">
+				<div class="col s12 m12 l12">
 						<div id="trigger5" class="spacer s0">
 							<svg class="saeko_svg" version="1.1" id="saeko_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-10 -10 650 450" preserveAspectRatio="xMinYMin meet"  xml:space="preserve" width="750" height="450" fill="#0070FF">
 								<path id="dot3_3" class="saeko_logo_dot" d="M93.7,251.7c-2,7.7-9.9,12.3-17.6,10.3l-65.3-19.2c-7.7-2-12.3-9.9-10.3-17.6l0,0
@@ -74,6 +76,9 @@
 						</div>
 					</div>
 				</div>
+			</div>
+			<div id="sign-arrow" class="sign-scroll-down no-display">
+				<i class="material-icons">arrow_downward</i>
 			</div>
 			<div class="scrolldown">
 				<div id="scroll-line">
@@ -134,13 +139,38 @@
 				</div>
 			</div>
 		</section>
-		<section id="section-horizontal2" class="section-blue">
-			<div class="row no-margin center">
-				<div class="col l12">
-					<div class="col l6 red">p</div>
-					<div class="col l6 orange">p</div>
+		<section id="section-horizontal2" class="section-blue red hidden relative">
+			<div class="ul-large">
+				<div class="section-child-large-first valign-wrapper relative">
+					<div class="row full-width full-height no-margin">
+						<div class="col s12 m12 l12 full-height bottom">
+							<div class="col s12 m6 l6 full-height2">
+								<img id="mexicoImg" src="images/mexico/mapas00.png" class="country-img mexico-img">
+							</div>
+							<div class="col s12 m6 l6 full-height2">
+								<img id="australiaImg" src="images/australia/mapas00.png" class="country-img">
+							</div>	
+						</div>
+						<div id="trigger-mexico" class="spacer s0"></div>
+					</div>
+					<div class="users-quant-main-cont">
+						<div id="text-500" class="users-quant-cont column center">
+							<p class="h100 uppercase users-quant text-500">500</p>
+							<p class="h3 uppercase users-quant">mil usuarios</p>
+						</div>
+					</div>
+					<div class="scrolldown2">
+						<div id="scroll-line5">
+						</div>
+					</div>
+				</div>
+				<div class="section-child-large-second valign-wrapper red">
+					<div class="polygon">
+						<p>me!</p>
+					</div>
 				</div>
 			</div>
+			
 		</section>
 			
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -148,8 +178,8 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
-		<script src="js/main.js"></script>
-		<script src="js/scrollMagic.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript" src="js/scrollMagic.js"></script>
 		<script>
 			$(document).ready(function(){
 				$('a[href*="#"]')

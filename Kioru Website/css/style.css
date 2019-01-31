@@ -272,7 +272,11 @@ nav ul li.active-marble-white{
 	height: 75px;
 	max-height: 300px;
 }
+#saeko_svg{
+	transition: transform 1s;
+}
 /* =========================================== IDs ============================================ */
+
 /* ===================================== PULSE ANIMATION ====================================== */
 @keyframes pulse{
 	0% {
@@ -285,9 +289,47 @@ nav ul li.active-marble-white{
     	transform: scale(1);
   	}
 }
-.path-animation {
-	animation: pulse 0.3s 2;
+@keyframes pulse_text {
+	0% { transform: scale(1); }
+  	70% { transform: scale(1.3); }
+    100% { transform: scale(1); }
 }
+.pulse-text{
+	animation: pulse_text 0.3s 2;
+}
+@keyframes pulse-saeko-largest {
+	0% { transform: scale(1.1); }
+  	70% { transform: scale(1.2); }
+    100% { transform: scale(1.1); }
+}
+.path-animation-largest {
+	animation: pulse-saeko-largest 0.3s 2;
+}
+@keyframes pulse-saeko-desktop {
+	0% { transform: scale(0.9); }
+  	70% { transform: scale(1); }
+    100% { transform: scale(0.9); }
+}
+.path-animation-desktop {
+	animation: pulse-saeko-desktop 0.3s 2;
+}
+@keyframes pulse-saeko-tablet {
+	0% { transform: scale(0.7); }
+  	70% { transform: scale(0.8); }
+    100% { transform: scale(0.7); }
+}
+.path-animation-tablet {
+	animation: pulse-saeko-tablet 0.3s 2;
+}
+@keyframes pulse-saeko-mobile {
+	0% { transform: scale(0.5); }
+  	70% { transform: scale(0.6); }
+    100% { transform: scale(0.5); }
+}
+.path-animation-mobile {
+	animation: pulse-saeko-mobile 0.3s 2;
+}
+
 .service-animation:hover {
 	animation: pulse 0.3s 1;
 }
@@ -309,14 +351,18 @@ nav ul li.active-marble-white{
 }
 .bg1{
 	background: url("../images/bg-1.png"), linear-gradient(180deg, #1E88E5 0%, #2D9CDB 100%);
-	z-index: -1;
+	z-index: -2;
 }
 .bg2{
 	background: url("../images/bg-2.png"), linear-gradient(180deg, #1E88E5 0%, #2D9CDB 100%);
-	z-index: 0;
+	z-index: -1;
 }
 .bg3{
 	background: url("../images/bg-3.png"), linear-gradient(180deg, #1E88E5 0%, #2D9CDB 100%);
+	z-index: 0;
+}
+.bg4{
+	background: linear-gradient(180deg, #1E88E5 0%, #2D9CDB 100%);
 	z-index: 1;
 }
 /* ================================== BODY BACKGROUND ANIMATION =============================== */
@@ -627,6 +673,11 @@ nav ul li.active-marble-white{
 	flex-direction: row;
 	justify-content: space-between;
 }
+.flex-end {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
 .right-display {
 	display: flex;
 	flex-direction: row;
@@ -639,6 +690,9 @@ nav ul li.active-marble-white{
 }
 .no-display {
 	display: none !important;
+}
+.displayed {
+	display: inline-block !important;
 }
 .flex {
 	display: flex;
@@ -764,6 +818,9 @@ nav ul li.active-marble-white{
 	width:100%;
 }
 .full-height {
+	height: 100%;
+}
+.full-height2 {
 	height: 100%;
 }
 .full-height > img {
@@ -1018,9 +1075,6 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 .default-icon {
 	width: 25px;
 }
-.animate-top{
-
-}
 .medium-section-blue{
 	z-index: 3;
 	background: transparent !important;
@@ -1037,7 +1091,35 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 	justify-content: center;
 	flex-direction: column;
 }
-
+.country-img{
+	position: relative;
+	width: 100%;
+	transform: scale(1.3);
+}
+.mexico-img{
+	padding-top: 30%;
+}
+.users-quant-main-cont {
+	width: 100%;
+	position: absolute;
+	top: 40%;
+	display: flex;
+	justify-content: center;
+}
+.users-quant-cont{
+	width: 50%;
+}
+.text-500{
+	line-height: 0.5;
+}
+.polygon {
+	width: 100%;
+	height: 100%;
+	text-overflow: hidden;
+	background: orange;
+	-webkit-clip-path: polygon(5% 0, 100% 0%, 75% 100%, 0% 100%);
+	clip-path: polygon(5% 0, 100% 0%, 75% 100%, 0% 100%);
+}
 /*====================================== SECTION HORIZONTAL =====================================*/
 .section-horizontal{
 	width: 100%;
@@ -1045,7 +1127,6 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 	overflow: hidden;
 	vertical-align: middle;	
 }
-
 .ul{
 	display: flex;
 	padding: 0;
@@ -1053,15 +1134,29 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 	position: relative;
 	height: inherit;
 }
+.ul-large{
+	display: flex;
+	padding: 0;
+	width: 500%;
+	position: relative;
+	height: inherit;
+	left: 0%;
+}
 .section-child {
 	width: 100%;
+}
+.section-child-large-first {
+	width: 20%;
+}
+.section-child-large-second {
+	width: 80%;
 }
 /*====================================== SECTION HORIZONTAL =====================================*/
 
 /*===================================== SAEKO SVG ANIMATION =====================================*/
 .saeko_svg{
 	position: relative;
-
+	transition: transform 3s;
 }
 .saeko_logo_dot{
 	stroke-linecap: round; 
@@ -1100,8 +1195,34 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 /*===================================== SAEKO SVG ANIMATION =====================================*/
 
 /*================================== LINE 1 VERTICAL ANIMATION ==================================*/
+@keyframes arrow-down{
+	0% { transform: scale(1); }
+  	80% { transform: scale(1.5); }
+    100% { transform: scale(1); }
+}
+.scale1 {
+	transform: scale(1);
+}
+.scale0 {
+	transform: scale(0);
+}
 .scrolldown{
 	position: relative;
+}
+.scrolldown2{
+    position: absolute;
+    top: 50%;
+    left: 90% !important;
+}
+.sign-scroll-down{
+	top: 80%;
+	position: absolute;
+}
+.sign-scroll-down i{
+	position: relative;
+	font-size: 50px;
+	transition: all 1s ease;
+	animation: arrow-down 1.5s infinite;
 }
 #service-description{
 	z-index: 2;
@@ -1110,7 +1231,8 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 }
 #scroll-line{
 	position: absolute;
-	height: 0px;
+	margin-top: 45px;
+	height: 0px ;
 	border-left: var(--marble-white) dashed 3px;
 	left: 50%;
 }
@@ -1134,6 +1256,14 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 	height: 0px;
 	left: 50%;
 	border-left: var(--marble-white) dashed 3px;
+}
+#scroll-line5{
+	z-index: 10;
+	position: absolute;
+	width: 0px;
+	left: 50%;
+	top: 50%;
+	border-bottom: var(--marble-white) dashed 3px;
 }
 #service1, #service2, #service3, #service4{
 	width: 120px;
@@ -1189,6 +1319,9 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 
 /* =======================DESKTOP DEVICES====================== 375*/
 @media only screen and (min-width: 992) and (max-width: 1200px) {
+	.saeko_svg{
+		transform: scale(0.1) !important; 
+	}
 	
 }
 /* =======================DESKTOP DEVICES====================== 375*/

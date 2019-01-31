@@ -63,6 +63,7 @@ $(function () {
 	});
 
 	/*Function for adding and deleting clases if an element in HTMl*/
+	let handleClassFunction;
 	function handleClass(element, clases, add){
 		var idElement = document.getElementById(element);
 		$.each(clases, (i, val) => {
@@ -159,33 +160,18 @@ $(function () {
 			}
 		}
 
-		
-		/*var landscape = document.getElementById('landscape') ? document.getElementById('landscape') : null;
-		var navbar = document.getElementById('navbar');
-		var services = document.getElementById('services');
-		var ourCompany = document.getElementById('our-company');
-		var experience = document.getElementById('experience');
-		var steps = document.getElementById('steps');
-		var callToAction = document.getElementById('call-to-action');
-		var footer = document.getElementById('footer');
-		console.log(window.innerWidth);
-		console.log(window.innerHeight);
-		if(window.innerWidth > 991 ){
-			var w = window.innerWidth - 17 + 'px';
-	  	} else {
-	  		
-			var w = window.innerWidth + 'px';
-	  	}
-		var h = window.innerHeight + 'px';
-		landscape ? landscape.style.width = w : null;
-		landscape ? landscape.style.height = h : null;
-		navbar.style.width = w;
-		services ? services.style.width = w : null;
-	 	ourCompany ? ourCompany.style.width = w : null;
-		experience ? experience.style.width = w : null;	
-		steps ? steps.style.width = w : null;
-		callToAction ? callToAction.style.width = w : null;
-		footer.style.width = w;*/
+		if(document.getElementById("html-portfolios")){
+			svgImageSaeko = document.getElementById("saeko_svg")
+			if (window.innerWidth > 1200) {
+				svgImageSaeko.setAttribute("style", "transform: scale(1.1)")
+			} else if(window.innerWidth >= 992 && window.innerWidth <= 1200) {
+				svgImageSaeko.setAttribute("style", "transform: scale(0.9)")
+			} else if(window.innerWidth >= 601 && window.innerWidth <= 991) {
+				svgImageSaeko.setAttribute("style", "transform: scale(0.7)")
+			} else {
+				svgImageSaeko.setAttribute("style", "transform: scale(0.5)")
+			}
+		}
 	}
 	if(document.getElementById("navbar")){
 		$('.sidenav').sidenav();
