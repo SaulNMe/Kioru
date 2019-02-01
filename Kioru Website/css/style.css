@@ -146,7 +146,7 @@ nav ul li.active-marble-white{
 	width: 100%;
 }
 #our-company {
-	z-index: 1;
+	z-index: 5; 1;
 	background-color: var(--space-blue);
 	width: 100%;
 	display: flex;
@@ -351,19 +351,19 @@ nav ul li.active-marble-white{
 }
 .bg1{
 	background: url("../images/bg-1.png"), linear-gradient(180deg, #1E88E5 0%, #2D9CDB 100%);
-	z-index: -2;
+	z-index: 5; -2;
 }
 .bg2{
 	background: url("../images/bg-2.png"), linear-gradient(180deg, #1E88E5 0%, #2D9CDB 100%);
-	z-index: -1;
+	z-index: 5; -1;
 }
 .bg3{
 	background: url("../images/bg-3.png"), linear-gradient(180deg, #1E88E5 0%, #2D9CDB 100%);
-	z-index: 0;
+	z-index: 5; 0;
 }
 .bg4{
 	background: linear-gradient(180deg, #1E88E5 0%, #2D9CDB 100%);
-	z-index: 1;
+	z-index: 5; 1;
 }
 /* ================================== BODY BACKGROUND ANIMATION =============================== */
 
@@ -791,6 +791,16 @@ nav ul li.active-marble-white{
 	font-style: normal;
 	line-height: normal;
 }
+.bold-700{
+	font-weight: 700 !important;
+	font-style: normal;
+	line-height: normal;
+}
+.bold-800{
+	font-weight: 800 !important;
+	font-style: normal;
+	line-height: normal;
+}
 /* =============================================FONT WEIGHT========================================= */
 
 /*======================================== SLIDER DECIVE ========================================*/
@@ -1067,7 +1077,7 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 .sticky-nav{
 	position: fixed;
 	top: 0;
-	z-index: 3;
+	z-index: 5; 3;
 }
 .drop-cap{
 	font-size: 36px;
@@ -1076,7 +1086,7 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 	width: 25px;
 }
 .medium-section-blue{
-	z-index: 3;
+	z-index: 5; 3;
 	background: transparent !important;
 	height: 20vh;
 	width: 100vw;
@@ -1084,7 +1094,7 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 	flex-direction: column;
 }
 .section-blue {
-	z-index: 2;
+	z-index: 5; 2;
 	background: transparent !important;
 	height: 100vh;
 	width: 100vw;
@@ -1112,13 +1122,56 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 .text-500{
 	line-height: 0.5;
 }
+.highest-text{
+	position: relative;
+	top: 23%;
+	left: 9%;
+	font-size: 200px;
+	color: rgba(255, 255, 255, 0.3);
+}
+.client-container {
+	width: auto;
+}
+.client-container > img {
+	width: 150px;
+	margin-right: 100px;
+}
+.client-container > div {
+	display: flex;
+	flex-direction: row;
+}
+.square-box {
+	position: absolute;
+	top: 5%;
+	left: 20%;
+	border: var(--marble-white) solid 3px;
+}
+.cliente-container:hover {
+	animation: pulse 0.3s 2;
+}
+.slider-clients{
+	position: absolute;
+	bottom: 10%;
+	left: 0%;
+	width: 100%;
+	height: 200px;
+	background-color: rgba(255, 255, 255, 0.7);
+}
+.container-clients{
+	position: relative;
+	left: 5%;
+}
 .polygon {
+	z-index: 5; 
 	width: 100%;
 	height: 100%;
 	text-overflow: hidden;
-	background: orange;
-	-webkit-clip-path: polygon(5% 0, 100% 0%, 75% 100%, 0% 100%);
-	clip-path: polygon(5% 0, 100% 0%, 75% 100%, 0% 100%);
+	background-repeat: repeat-x;
+	background-size: contain;
+	background-image: url("../images/bg-clients.jpg");
+	background-origin: content-box;
+	-webkit-clip-path: polygon(5% 0, 98% 0%, 95% 100%, 2% 100%);
+	clip-path: polygon(5% 0, 98% 0%, 95% 100%, 2% 100%);
 }
 /*====================================== SECTION HORIZONTAL =====================================*/
 .section-horizontal{
@@ -1258,7 +1311,7 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 	border-left: var(--marble-white) dashed 3px;
 }
 #scroll-line5{
-	z-index: 10;
+	z-index: 5; 5;
 	position: absolute;
 	width: 0px;
 	left: 50%;

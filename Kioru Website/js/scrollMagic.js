@@ -279,7 +279,6 @@ $(function() {
 			offset: 500
 		})
 		.setTween(tween11)
-		.addIndicators({name: "bg 5"})
 		.addTo(controller)
 		/*================================= CHANGING SCENE ========================================*/
 		var macBookProScene = new ScrollMagic.Scene({
@@ -446,6 +445,11 @@ $(function() {
 
 		let horizontalSlide = new TimelineMax().to(".ul", 1, { left: "-100%" });
 		let horizontalSlide2 = new TimelineMax().to(".ul-large", 1, { left: "-400%" })
+
+		let squareBoxTween = new TimelineMax().to(".square-box", 1, {left: "10%"})
+		let highestTextTween = new TimelineMax().to(".highest-text", 1, {left: "25%"})
+		let containerClientTween = new TimelineMax().to(".container-clients", 1, {left: "2%"})
+
 		new ScrollMagic.Scene({
 			triggerElement: "#section-horizontal",
 			triggerHook: "onLeave",
@@ -463,6 +467,33 @@ $(function() {
 		.setTween(horizontalSlide2)
 		.addTo(controller);
 
+		let highestTextAnimation = new ScrollMagic.Scene({
+			triggerElement: "#scroll-line4",
+			triggerHook: 0.5,
+			duration: 2000,
+			offset: 700
+		})
+		.setTween(highestTextTween)
+		.addTo(controller);
+
+		let squareBoxAnimation = new ScrollMagic.Scene({
+			triggerElement: "#scroll-line4",
+			triggerHook: 0.5,
+			duration: 1300,
+			offset: 700
+		})
+		.setTween(squareBoxTween)
+		.addTo(controller);
+
+		let containerClientsAnimation = new ScrollMagic.Scene({
+			triggerElement: "#scroll-line4",
+			triggerHook: 0.5,
+			duration: 1300,
+			offset: 700
+		})
+		.setTween(containerClientTween)
+		.addTo(controller);
+
 		let scrollLineTween1 = new TimelineMax().to("#scroll-line", 1, {
 			height: "200px",
 			onReverseComplete: () => {
@@ -477,7 +508,7 @@ $(function() {
 			}
 		})
 		let scrollLineTween2 = new TimelineMax().to("#scroll-line2", 1, {
-			width: "550px"
+			width: "480px"
 		})
 		let scrollLineTween3 = new TimelineMax().to("#scroll-line3", 1, {
 			height: "60px"
