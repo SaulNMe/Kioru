@@ -235,8 +235,7 @@
 				</div>
 			</div>
 			
-		</section>
-			
+		</section>			
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
@@ -244,54 +243,5 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
 		<script type="text/javascript" src="js/scrollMagic.js"></script>
-		<script>
-			$(document).ready(function(){
-				$('a[href*="#"]')
-				  // Remove links that don't actually link to anything
-				  .not('[href="#"]')
-				  .not('[href="#0"]')
-				  .click(function(event) {
-				    // On-page links
-				    if (
-				      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
-				      && 
-				      location.hostname == this.hostname
-				    ) {
-				      // Figure out element to scroll to
-				      var target = $(this.hash);
-				      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-				      // Does a scroll target exist?
-				      if (target.length) {
-				        // Only prevent default if animation is actually gonna happen
-				        event.preventDefault();
-				        $('html, body').animate({
-				          scrollTop: target.offset().top
-				        }, 1000, function() {
-				          // Callback after animation
-				          // Must change focus!
-				          var $target = $(target);
-				          $target.focus();
-				          if ($target.is(":focus")) { // Checking if the target was focused
-				            return false;
-				          } else {
-				            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
-				            $target.focus(); // Set focus again
-				          };
-				        });
-				      }
-				    }
-				  });
-				/*let scrollLine = document.getElementById('scroll-line');
-
-				let tloader = new TimelineMax();
-				tloader.from(scrollLine, 2, {height: 0, transformOrigin: "center top", ease:Power0.easeOut}, 5)
-*/
-				/*$('#service1').hover(function(){
-					$('#service1').attr('src', 'images/saeko-services/saeko-admin-unfill.png')
-				}, function(){
-					$('#service1').attr('src', 'images/saeko-services/saeko-admin.png')
-				})*/
-		});
-		</script>
 	</body>
 </html>

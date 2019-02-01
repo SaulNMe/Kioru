@@ -48,11 +48,13 @@ $(function () {
 			document.getElementById("html-contact-us") || document.getElementById("html-contact-us-sent") ||
 			document.getElementById("html-blog-new")){
 			if(ourCompany){
-				ourCompany.style.marginTop = 65 + "px";}
+				ourCompany.style.marginTop = 65 + "px";
+			}
 				$('nav').addClass('sticky-nav');
 		} else {
 			if(ourCompany){
-				ourCompany.style.marginTop = 0 + "px";}
+				ourCompany.style.marginTop = 0 + "px";
+			}
 				$('nav').removeClass('sticky-nav')
 		}
 	}

@@ -157,21 +157,11 @@ $(function() {
 		.addTo(controller);
 
 
-	let tweenClass1 = new TweenMax.to("#device1", 1, {
-		className: "+=animation-device1"
-	});
-	let tweenClass2 = new TweenMax.to("#device2", 1, {
-		className: "+=animation-device2"
-	});
-	let tweenClass3 = new TweenMax.to("#device3", 1, {
-		className: "+=animation-device3"
-	});
-	let tweenClass4 = new TweenMax.to("#device4", 1, {
-		className: "+=animation-device4"
-	});
-	let tweenClass5 = new TweenMax.to("#device5", 1, {
-		className: "+=animation-device5"
-	});
+	let tweenClass1 = new TweenMax.to("#device1", 1, { className: "+=animation-device1" });
+	let tweenClass2 = new TweenMax.to("#device2", 1, { className: "+=animation-device2" });
+	let tweenClass3 = new TweenMax.to("#device3", 1, { className: "+=animation-device3" });
+	let tweenClass4 = new TweenMax.to("#device4", 1, {opacity: 1, right: "183px" });
+	let tweenClass5 = new TweenMax.to("#device5", 1, {opacity: 1, left: "183px" });
 
 	let deviceAnimation1 = new ScrollMagic.Scene({
 			triggerElement: "#trigger6",

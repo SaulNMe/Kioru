@@ -179,8 +179,8 @@ nav ul li.active-marble-white{
 }
 #greetings {
 	position: relative;
-	height: 700px;
-	margin-top: 64px;
+	height: 100vh;
+	margin-top: 64px !important;
 }
 #about-us {
 	margin-top: 64px;
@@ -816,10 +816,6 @@ nav ul li.active-marble-white{
 	display: inline-block;
 	height: 80px;
 }
-.pick2 {
-	display: inline-block;
-	height: 500px;
-}
 /*======================================== SLIDER DECIVE ========================================*/
 .full-width {
 	width: 100%;
@@ -1122,6 +1118,10 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 .text-500{
 	line-height: 0.5;
 }
+button:focus {
+	background-color: transparent !important;
+}
+
 .highest-text{
 	position: relative;
 	top: 23%;
@@ -1270,12 +1270,12 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 .sign-scroll-down{
 	top: 80%;
 	position: absolute;
+	animation: arrow-down 1.5s infinite;
 }
 .sign-scroll-down i{
 	position: relative;
 	font-size: 50px;
 	transition: all 1s ease;
-	animation: arrow-down 1.5s infinite;
 }
 #service-description{
 	z-index: 2;
@@ -1352,11 +1352,8 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 .animation-device3{
 	left: 396px;
 }
-.animation-device4{
-	right: 183px;
-}
-.animation-device5{
-	left: 183px;
+#device4, #device5{
+	opacity: 0;
 }
 
 /*================================== IMAGE DEVICE ANIMATION =====================================*/
@@ -1381,6 +1378,15 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 
 /* =======================TABLE DEVICES====================== 375*/
 @media only screen and (min-width: 601px) and (max-width: 991px) {
+	.img-author-base {
+	widows: 100px;
+	height: 100px;
+	margin-right: 8px;
+	border-radius: 50%;
+}
+	.highest-text{
+		font-size: 150px;
+	}
 	.h44 {
 		font-size: 44px !important;
 	}
@@ -1424,7 +1430,17 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 /* =======================TABLE DEVICES====================== 375*/
 
 /* =======================MOVILE DEVICES====================== 375*/
+
 @media only screen and (min-width: 0px) and ( max-width: 600px ){
+	.img-author-base {
+		widows: 90px;
+		height: 90px;
+		margin-right: 8px;
+		border-radius: 50%;
+	}
+	.highest-text{
+		font-size: 80px;
+	}
 	.resp-full-width {
 		width: 100%;
 	}
