@@ -167,7 +167,7 @@ nav ul li.active-marble-white{
 }
 
 #call-to-action {
-	background-image: url(../images/passage.png); 
+	/* background-image: url(../images/passage.png);  */
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-color: #0E1B34;
@@ -398,6 +398,11 @@ nav ul li.active-marble-white{
 }
 .tint-color{
 	background-color: #0E1B34;
+}
+.tint-image{
+	position: absolute;
+	width: 100%;
+	height: 100%;
 }
 .op-03 {
 	opacity: 0.3 !important;
@@ -1004,7 +1009,7 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 	top: 47px;
 }
 .bg-team{
-	background-image: url("../images/team1.jpg");
+	background-image: url("../images/team1-small.png");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-color: #0E1B34;
