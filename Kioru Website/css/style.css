@@ -69,7 +69,7 @@ nav {
 	--grayer-out: #929292 !important; 
 	--marble-white: #FDFFFC !important; 
 	--concrete-gray:#DCDCDC !important; 
-	--concrete-grey: ##E8E7EA !important;
+	--concrete-grey: #E8E7EA !important;
 	--coal-black: #101010 !important; 
 	--light-gray: #ECECEC !important; 
 	--frame-gray: #454545 !important; 
@@ -120,6 +120,10 @@ nav ul li.active-marble-white{
 	background-color: var(--marble-white);
 }
 
+.logo-size {
+	height: 50px
+}
+
 /* =========================================NAV BAR============================================= */
 
 
@@ -133,14 +137,10 @@ nav ul li.active-marble-white{
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: inherit;
-	height: 100vh; 
 	background-color: var(--space-blue);
+	height: 100vh; 
 	width: auto;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	overflow: hidden;
-	position: relative;
+	position: relative;	
 }
 #navbar {
 	width: 100%;
@@ -381,9 +381,22 @@ nav ul li.active-marble-white{
 }
 .tint{
 	position: absolute;
-	opacity: 0.5 !important;
-	width: 100%;
-	height: 100%;
+	opacity: 0.5;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	background-color: #0E1B34;
+}
+
+.fill{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+}
+.tint-color{
 	background-color: #0E1B34;
 }
 .tint-image{
@@ -468,7 +481,7 @@ nav ul li.active-marble-white{
 	padding: 0px 0px !important;
 }
 .no-bottom-padding{
-	padding-bottom: 0 !important
+	padding-bottom: 0 !important;
 }
 .extra-padding {
 	padding: 72px 240px 10px 240px;
@@ -673,6 +686,9 @@ nav ul li.active-marble-white{
 }
 
 /* ==========================================DISPLAY============================================ */
+.flex1{
+	flex: 1;
+}
 .space-between {
 	display: flex;
 	flex-direction: row;
@@ -725,6 +741,9 @@ nav ul li.active-marble-white{
 }
 .relative {
 	position: relative;
+}
+.absolute {
+	position: absolute;
 }
 /* ==========================================DISPLAY============================================ */
 
@@ -840,6 +859,9 @@ nav ul li.active-marble-white{
 .full {
 	width: 100%;
 	height: 100%;
+}
+.fill-height{
+	height: 100vh;
 }
 .medium {
 	display: flex;
