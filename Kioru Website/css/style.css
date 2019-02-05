@@ -381,7 +381,7 @@ nav ul li.active-marble-white{
 }
 .tint{
 	position: absolute;
-	opacity: 0.5;
+	opacity: 0.5 !important;
 	width: 100%;
 	height: 100%;
 	background-color: #0E1B34;

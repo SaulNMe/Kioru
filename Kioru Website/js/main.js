@@ -178,4 +178,5 @@ $(function () {
 	if(document.getElementById("navbar")){
 		$('.sidenav').sidenav();
 	}
+	$("img.lazy").lazyload();
 });
